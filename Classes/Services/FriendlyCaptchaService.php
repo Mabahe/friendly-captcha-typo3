@@ -113,23 +113,23 @@ class FriendlyCaptchaService
             'sitekey' => $this->configuration['public_key'],
         ];
 
-        $result = ['verified' => false, 'error' => ''];
+        $result = ['verified' => false, 'errors' => ''];
 
         if (empty($request['solution'])) {
-            $result['error'] = 'missing-input-solution';
+            $result['errors'] = 'solution_missing';
         } else {
             $response = $this->queryVerificationServer($request);
 
             if (!$response) {
-                $result['error'] = 'validation-server-not-responding';
+                $result['errors'] = 'validation_server_not_responding';
             }
 
             if ($response['success']) {
                 $result['verified'] = true;
             } else {
-                $result['error'] = is_array($response['error-codes']) ?
-                    reset($response['error-codes']) :
-                    $response['error-codes'];
+                $result['errors'] = is_array($response['errors']) ?
+                    reset($response['errors']) :
+                    $response['errors'];
             }
         }
 
@@ -151,7 +151,7 @@ class FriendlyCaptchaService
         if (empty($verifyServerInfo)) {
             return [
                 'success' => false,
-                'error-codes' => 'friendlycaptcha-not-reachable'
+                'errors' => 'friendlycaptcha_not_reachable'
             ];
         }
 

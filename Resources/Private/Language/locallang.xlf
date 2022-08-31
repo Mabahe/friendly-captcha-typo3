@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-07-12T08:43:45" product-name="db_friendlycaptcha">
+		<header/>
+		<body>
+			<trans-unit id="error_friendlycaptcha_secret_missing" xml:space="preserve">
+				<source>The captcha secret parameter is missing.</source>
+			</trans-unit>
+			<trans-unit id="error_friendlycaptcha_secret_invalid" xml:space="preserve">
+				<source>The captcha secret parameter is invalid or malformed.</source>
+			</trans-unit>
+			<trans-unit id="error_friendlycaptcha_solution_missing" xml:space="preserve">
+				<source>The captcha solution parameter is missing.</source>
+			</trans-unit>
+			<trans-unit id="error_friendlycaptcha_solution_invalid" xml:space="preserve">
+				<source>The captcha solution parameter is invalid or malformed.</source>
+			</trans-unit>
+			<trans-unit id="error_friendlycaptcha_solution_timeout_or_duplicate" xml:space="preserve">
+				<source>The solution has expired or has already been used. Please do the verification again.</source>
+			</trans-unit>
+			<trans-unit id="error_friendlycaptcha_bad_request" xml:space="preserve">
+				<source>Something is wrong with your request.</source>
+			</trans-unit>
+			<trans-unit id="error_friendlycaptcha_bad_request" xml:space="preserve">
+				<source>Something is wrong with your request.</source>
+			</trans-unit>
+			<trans-unit id="error_friendlycaptcha_validation_server_not_responding" xml:space="preserve">
+				<source>The validation server is not available.</source>
+			</trans-unit>
+			<trans-unit id="error_friendlycaptcha_friendlycaptcha_not_reachable" xml:space="preserve">
+				<source>The validation server is not available.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

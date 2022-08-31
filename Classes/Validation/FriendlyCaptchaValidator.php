@@ -50,11 +50,11 @@ class FriendlyCaptchaValidator extends \TYPO3\CMS\Extbase\Validation\Validator\A
         if ($captcha !== null) {
             $status = $captcha->validateFriendlyCaptcha();
 
-            if ($status == false || $status['error'] !== '') {
-                $errorText = $this->translateErrorMessage('error_friendlycaptcha_' . $status['error'], 'db_friendlycaptcha');
+            if ($status['verified'] !== true || $status['errors'] !== '') {
+                $errorText = $this->translateErrorMessage('error_friendlycaptcha_' . $status['errors'], 'db_friendlycaptcha');
 
                 if (empty($errorText)) {
-                    $errorText = htmlspecialchars($status['error']);
+                    $errorText = htmlspecialchars($status['errors']);
                 }
 
                 $this->addError($errorText, 1519982125);

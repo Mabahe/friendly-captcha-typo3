@@ -68,11 +68,11 @@ class SfRegisterAdapter extends AbstractAdapter
         if ($this->friendlyCaptcha !== null && $this->session->get('captchaWasValid') !== true) {
             $status = $this->friendlyCaptcha->validateFriendlyCaptcha();
 
-            if ($status == false || (string)$status['error'] !== '') {
+            if ($status['verified'] !== true || (string)$status['errors'] !== '') {
                 $validCaptcha = false;
                 $this->addError(
                     LocalizationUtility::translate(
-                        'error_friendlycaptcha_' . $status['error'],
+                        'error_friendlycaptcha_' . $status['errors'],
                         'db_friendlycaptcha'
                     ),
                     1307421960
