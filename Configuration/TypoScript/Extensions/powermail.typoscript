@@ -1,0 +1,34 @@
+plugin.tx_powermail {
+  view {
+    templateRootPaths {
+      12 = EXT:db_friendlycaptcha/Resources/Private/Powermail/Templates/
+    }
+    partialRootPaths {
+      12 = EXT:db_friendlycaptcha/Resources/Private/Powermail/Partials/
+    }
+  }
+  settings.setup {
+    friendlycaptcha {
+      public_key = {$plugin.tx_friendlycaptcha.public_key}
+      language = {$plugin.tx_friendlycaptcha.lang}
+    }
+    spamshield.methods {
+      12 {
+        _enable = 1
+
+        # Spamcheck name
+        name = Friendly Captcha
+
+        # Class
+        class = BalatD\FriendlyCaptcha\Domain\Validator\SpamShield\FriendlyCaptchaMethod
+
+        # if this check failes - add this indication value to indicator (0 disables this check completely)
+        indication = 10
+
+        # must be present, also when empty
+        configuration {
+        }
+      }
+    }
+  }
+}
