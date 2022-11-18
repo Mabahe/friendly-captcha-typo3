@@ -52,4 +52,6 @@ page.includeJSFooterlibs{
 
   friendlycaptcha = https://unpkg.com/friendly-challenge@0.9.8/widget.min.js
   friendlycaptcha.external = 1
+
+  friendlycaptchaCallback = EXT:db_friendlycaptcha/Resources/Public/JavaScript/friendly-captcha-callback.js
 }

@@ -13,6 +13,7 @@
             />
             <div class="frc-captcha"
                  data-sitekey="{configuration.public_key}"
+                 data-callback="friendlyCaptchaCallback"
                  {f:if(condition: '{configuration.lang}', then: 'data-lang="{configuration.lang}"')}></div>
         </frc:form.friendlycaptcha></f:format.raw>
     </f:render>
