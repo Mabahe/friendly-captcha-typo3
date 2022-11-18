@@ -47,9 +47,9 @@ plugin.tx_form.settings.yamlConfigurations.1998 = EXT:db_friendlycaptcha/Configu
 plugin.tx_form.view.partialRootPaths.1998 = EXT:db_friendlycaptcha/Resources/Private/Frontend/Partials/
 
 page.includeJSFooterlibs{
-  friendlycaptchaModule = https://unpkg.com/friendly-challenge@0.8.3/widget.module.min.js
+  friendlycaptchaModule = https://unpkg.com/friendly-challenge@0.9.8/widget.module.min.js
   friendlycaptchaModule.external = 1
 
-  friendlycaptcha = https://unpkg.com/friendly-challenge@0.8.3/widget.min.js
+  friendlycaptcha = https://unpkg.com/friendly-challenge@0.9.8/widget.min.js
   friendlycaptcha.external = 1
 }
