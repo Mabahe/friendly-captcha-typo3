@@ -17,4 +17,9 @@ call_user_func(function () {
             1998 = EXT:db_friendlycaptcha/Configuration/Yaml/FormSetup.yaml
         }
     ');
+
+    if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('sf_event_mgt')) {
+        $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['sf_event_mgt']['captchaValidationTypes']['friendlyCaptcha'] =
+            \BalatD\FriendlyCaptcha\Validation\FriendlyCaptchaValidator::class;
+    }
 });
