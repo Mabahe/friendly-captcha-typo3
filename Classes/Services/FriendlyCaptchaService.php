@@ -2,8 +2,8 @@
 
 namespace BalatD\FriendlyCaptcha\Services;
 
-use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
+use TYPO3\CMS\Core\Http\Client\GuzzleClientFactory;
 use TYPO3\CMS\Core\TypoScript\TypoScriptService;
 use TYPO3\CMS\Core\Utility\Exception\MissingArrayPathException;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -146,7 +146,7 @@ class FriendlyCaptchaService
     protected function queryVerificationServer(array $data): array
     {
         $verifyServerInfo = @parse_url($this->configuration['verify_server']);
-        $guzzleClient = new Client();
+        $guzzleClient = GuzzleClientFactory::getClient();
 
         if (empty($verifyServerInfo)) {
             return [
