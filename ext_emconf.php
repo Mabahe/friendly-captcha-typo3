@@ -9,7 +9,7 @@ $EM_CONF['db_friendlycaptcha'] = [
     'version' => '1.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '10.4.99',
+            'typo3' => '10.4.2-10.4.99',
         ],
     ],
 ];
